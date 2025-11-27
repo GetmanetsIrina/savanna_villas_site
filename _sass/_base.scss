@@ -5,7 +5,7 @@ body {
 }
 
 body {
-    @include serif-font;
+    font-family: 'AgoPusc', sans-serif;
 }
 
 hr {
@@ -33,11 +33,11 @@ h3,
 h4,
 h5,
 h6 {
-    @include sans-serif-font;
+    font-family: 'AgoPusc', sans-serif;
 }
 
 p {
-    font-size: 16px;
+    font-size: 22px;
     line-height: 1.5;
     margin-bottom: 20px;
 }
@@ -65,6 +65,10 @@ aside {
 
 .no-padding {
     padding: 0;
+}
+
+.small-padding {
+    padding: 100px 0 30px 0;
 }
 
 // Navigation
@@ -112,7 +116,8 @@ aside {
         background-color: transparent;
         border-color: rgba(white, .3);
         .navbar-header .navbar-brand {
-            color: rgba(white, .7);
+            font-family: 'Robima', sans-serif;
+            color: rgba(white, .9);
             &:hover,
             &:focus {
                 color: white;
@@ -129,18 +134,18 @@ aside {
             background-color: white;
             border-color: rgba($theme-dark, .5);
             .navbar-header .navbar-brand {
-                color: $theme-primary;
-                font-size: 14px;
+                color: $theme-dark;
+                font-size: 20px;
                 &:hover,
                 &:focus {
-                    color: darken($theme-primary, 10%);
+                    color: darken($theme-dark, 10%);
                 }
             }
             .nav > li > a,
             .nav > li > a:focus {
                 color: $theme-dark;
                 &:hover {
-                    color: $theme-primary;
+                    color: $theme-dark;
                 }
             }
         }
@@ -163,8 +168,18 @@ header {
         text-align: center;
         padding: 100px 15px 100px;
         width: 100%;
+        background: rgba(94, 76, 67, 0.6);
         .header-content-inner {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            .header-logo {
+                width: 15%;
+                max-width: 300px;
+                height: auto;
+                margin-bottom: 20px;
+            }
             h1 {
+                font-size: 6em;
                 font-weight: 700;
                 text-transform: uppercase;
                 margin-top: 0;
@@ -185,6 +200,7 @@ header {
         min-height: 100%;
         .header-content {
             position: absolute;
+            background: rgba(94, 76, 67, 0.6);
             top: 50%;
             -webkit-transform: translateY(-50%);
             -ms-transform: translateY(-50%);
@@ -195,8 +211,10 @@ header {
                 margin-left: auto;
                 margin-right: auto;
                 p {
-                    font-size: 18px;
-                    max-width: 80%;
+                    font-size: 24px;
+                    font-weight: 400;
+                    color: white;
+                    max-width: 90%;
                     margin-left: auto;
                     margin-right: auto;
                 }
@@ -278,6 +296,24 @@ header {
     }
 }
 
+.portfolio-box-plans {
+    position: relative;
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto;
+    .portfolio-box-plans-caption {
+        color: white;
+        opacity: 0;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        @include transition-all;
+    }
+}
+
 .call-to-action {
     h2 {
         margin: 0 auto 20px;
@@ -294,13 +330,20 @@ header {
     padding-left:0;
 }
 
+.no-gutter-with-background > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+    background: rgba(134, 112, 97);
+    background-color: rgba(134, 112, 97);
+}
+
 // Button Styles
 .btn-default {
-    @include button-variant($theme-dark, white, white);
+    @include button-variant($theme-primary, white, white);
 }
 
 .btn-primary {
-    @include button-variant(white, $theme-primary, $theme-primary);
+    @include button-variant(#867061, white, white);
 }
 
 .btn {
@@ -347,5 +390,13 @@ img::-moz-selection {
 
 body {
     -webkit-tap-highlight-color: $theme-dark;
+}
+
+// boundaries
+.framed-img {
+    padding: 10px;
+    background: #fff;
+    border: 2px solid #8a7b6d;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
 }
 

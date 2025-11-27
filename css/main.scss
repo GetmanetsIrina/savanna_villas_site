@@ -34,8 +34,29 @@
 // }
 
 // variables.less
-$theme-primary: #F05F40;
-$theme-dark: #222;
+$theme-primary: #867061;
+$theme-dark: #000000;
+
+@font-face {
+    font-family: 'AgoPusc';
+    src: url('../fonts/AGOPUSC.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AgoPusc';
+    src: url('../fonts/AGOPUSC-BOLD.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Robima';
+    src: url('../fonts/ROBIMA-MERTTHA-SANS-SERIF.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
